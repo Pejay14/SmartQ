@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartQ project overview page.">
+    <title>SmartQ | Overview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/syle.css">
+</head>
+
+<body>
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="home.html" class="brand">
+                <div class="brand-mark">SQ</div>
+                <div class="brand-text">
+                    <strong>SmartQ</strong>
+                    <span>JRMSU Registrar</span>
+                </div>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="overview.html" class="nav-link active">Overview</a>
+                <a href="goals.html" class="nav-link">Goals</a>
+                <a href="wbs.html" class="nav-link">WBS</a>
+                <a href="sequence.html" class="nav-link">Sequence</a>
+                <a href="duration.html" class="nav-link">Schedule</a>
+                <a href="gantt.html" class="nav-link">Gantt</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section section-light" id="overview">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-label">01 — PROJECT OVERVIEW</span>
+                    <h2>Making Registrar Services <span>More Organized</span></h2>
+                    <p>
+                        SmartQ is a proposed web-based queue reservation and document tracking system intended for the
+                        University Registrar's Office of JRMSU.
+                    </p>
+                </div>
+
+                <div class="overview-grid">
+                    <div class="overview-card reveal">
+                        <div class="card-number">01</div>
+                        <div class="card-icon">◷</div>
+                        <h3>Queue Reservation</h3>
+                        <p>
+                            Students can select a Registrar service, reserve a queue slot, and monitor their queue position.
+                        </p>
+                    </div>
+
+                    <div class="overview-card reveal">
+                        <div class="card-number">02</div>
+                        <div class="card-icon">◫</div>
+                        <h3>Document Tracking</h3>
+                        <p>
+                            Users can monitor the status of requested physical documents from submission until completion.
+                        </p>
+                    </div>
+
+                    <div class="overview-card reveal">
+                        <div class="card-number">03</div>
+                        <div class="card-icon">◉</div>
+                        <h3>Registrar Dashboard</h3>
+                        <p>
+                            Authorized Registrar personnel can manage queues, document requests, statuses, and reports.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="overview-highlight reveal">
+                    <div class="highlight-icon">!</div>
+                    <div>
+                        <strong>Project Focus</strong>
+                        <p>
+                            The system focuses on improving the organization and visibility of Registrar services without
+                            requiring students to upload their physical document requirements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
