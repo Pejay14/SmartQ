@@ -394,8 +394,11 @@
         <!-- =====================================================
              WORK BREAKDOWN STRUCTURE
         ====================================================== -->
+<!-- =====================================================
+             WORK BREAKDOWN STRUCTURE
+        ====================================================== -->
 
-        <section class="section section-light" id="wbs">
+        <section class="section section-light section-wbs-full" id="wbs">
 
             <div class="container">
 
@@ -417,46 +420,22 @@
 
                 </div>
 
+            </div>
 
-                <div class="visual-card reveal">
+            <div class="visual-card visual-card-full reveal">
 
-                    <div class="visual-header">
+                <div class="visual-header">
 
-                        <div>
-                            <span>PROJECT STRUCTURE</span>
-                            <h3>SmartQ Work Breakdown Structure</h3>
-                        </div>
-
-                        <button
-                            class="view-image"
-                            type="button"
-                            data-image="assets/images/wbs.png">
-
-                            View Full Image
-
-                        </button>
-
+                    <div>
+                        <span>PROJECT STRUCTURE</span>
+                        <h3>SmartQ Work Breakdown Structure</h3>
                     </div>
 
+                </div>
 
-                    <div class="image-container">
+                <div class="wbs-container">
 
-                        <img
-                            src="assets/images/wbs.png"
-                            alt="SmartQ Work Breakdown Structure">
-
-                        <div class="image-placeholder">
-
-                            <span>WBS IMAGE</span>
-
-                            <p>
-                                Place <strong>wbs.png</strong>
-                                inside assets/images/
-                            </p>
-
-                        </div>
-
-                    </div>
+                    <div class="wbs-grid" id="wbsGrid"></div>
 
                 </div>
 
@@ -464,12 +443,11 @@
 
         </section>
 
-
-        <!-- =====================================================
+      <!-- =====================================================
              ACTIVITY SEQUENCING
         ====================================================== -->
 
-        <section class="section section-blue" id="sequence">
+        <section class="section section-blue section-sequence-full" id="sequence">
 
             <div class="container">
 
@@ -481,243 +459,210 @@
 
                     <h2>
                         From Initiation
-                        <span>to Finalization</span>
+                        <span>to Evaluation</span>
                     </h2>
 
                     <p>
-                        Project activities are arranged according
-                        to their logical dependencies.
+                        Logical flow and sequence of major activities for the SmartQ system development.
                     </p>
 
                 </div>
 
+            </div>
 
-                <div class="sequence-container">
+            <div class="visual-card visual-card-full reveal">
 
-                    <div class="sequence-line"></div>
+                <div class="seq-vertical-board">
 
-
-                    <div class="sequence-item reveal">
-
-                        <div class="sequence-number">
-                            01
+                    <!-- Header Banner -->
+                    <div class="seq-header-banner">
+                        <div class="seq-banner-logo">SQ</div>
+                        <div>
+                            <h3>SmartQ Project</h3>
+                            <p>Activity Sequencing</p>
                         </div>
+                    </div>
 
-                        <div class="sequence-content">
+                    <!-- Start Terminal -->
+                    <div class="seq-v-terminal seq-v-start">Start</div>
+                    <div class="seq-v-arrow">↓</div>
 
-                            <span>WEEK 1</span>
+                    <!-- Vertical Flow List -->
+                    <div class="seq-v-flow">
 
-                            <h3>
-                                Project Initiation
-                            </h3>
+                        <!-- 1. Project Planning -->
+                        <div class="seq-v-card seq-v-blue">
+                            <div class="seq-v-left">
+                                <div class="seq-v-icon">📄</div>
+                                <h4>1. Project Planning</h4>
+                            </div>
+                            <div class="seq-v-right">
+                                <ul>
+                                    <li>Define project objectives and scope</li>
+                                    <li>Identify stakeholders</li>
+                                    <li>Develop project schedule</li>
+                                    <li>Identify project risks</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="seq-v-arrow">↓</div>
 
-                            <p>
-                                Establish project direction,
-                                objectives, scope, and team roles.
-                            </p>
+                        <!-- 2. Requirements Analysis -->
+                        <div class="seq-v-card seq-v-green">
+                            <div class="seq-v-left">
+                                <div class="seq-v-icon">🔍</div>
+                                <h4>2. Requirements Analysis</h4>
+                            </div>
+                            <div class="seq-v-right">
+                                <ul>
+                                    <li>Conduct interviews with Registrar personnel</li>
+                                    <li>Gather requirements from students and clients</li>
+                                    <li>Analyze existing process</li>
+                                    <li>Define functional and non-functional requirements</li>
+                                    <li>Define data privacy and access requirements</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="seq-v-arrow">↓</div>
 
+                        <!-- 3. System Design -->
+                        <div class="seq-v-card seq-v-yellow">
+                            <div class="seq-v-left">
+                                <div class="seq-v-icon">✏️</div>
+                                <h4>3. System Design</h4>
+                            </div>
+                            <div class="seq-v-right">
+                                <ul>
+                                    <li>Design system architecture</li>
+                                    <li>Design database (ERD)</li>
+                                    <li>Design user roles and permissions</li>
+                                    <li>Design user interface</li>
+                                    <li>Design workflows and processes</li>
+                                    <li>Design reports and dashboard</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="seq-v-arrow">↓</div>
+
+                        <!-- 4. System Development -->
+                        <div class="seq-v-card seq-v-pink">
+                            <div class="seq-v-left">
+                                <div class="seq-v-icon">💻</div>
+                                <h4>4. System Development</h4>
+                            </div>
+                            <div class="seq-v-right">
+                                <ul>
+                                    <li>Develop system modules (queue reservation, document tracking, etc.)</li>
+                                    <li>Develop notification features</li>
+                                    <li>Develop administrator dashboard</li>
+                                    <li>Develop reports and analytics</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="seq-v-arrow">↓</div>
+
+                        <!-- 5. System Integration -->
+                        <div class="seq-v-card seq-v-purple">
+                            <div class="seq-v-left">
+                                <div class="seq-v-icon">🧩</div>
+                                <h4>5. System Integration</h4>
+                            </div>
+                            <div class="seq-v-right">
+                                <ul>
+                                    <li>Integrate database and application modules</li>
+                                    <li>Integrate queue reservation and monitoring</li>
+                                    <li>Integrate request and document tracking</li>
+                                    <li>Integrate notifications</li>
+                                    <li>Integrate dashboard and reporting</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="seq-v-arrow">↓</div>
+
+                        <!-- 6. Testing and Quality Assurance -->
+                        <div class="seq-v-card seq-v-teal">
+                            <div class="seq-v-left">
+                                <div class="seq-v-icon">📋</div>
+                                <h4>6. Testing and Quality Assurance</h4>
+                            </div>
+                            <div class="seq-v-right">
+                                <ul>
+                                    <li>Prepare test plan and test cases</li>
+                                    <li>Conduct unit, integration, and system testing</li>
+                                    <li>Conduct queue monitoring tests</li>
+                                    <li>Conduct security and privacy testing</li>
+                                    <li>Conduct user acceptance testing (UAT)</li>
+                                    <li>Fix identified issues</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="seq-v-arrow">↓</div>
+
+                        <!-- 7. Deployment and Implementation -->
+                        <div class="seq-v-card seq-v-orange">
+                            <div class="seq-v-left">
+                                <div class="seq-v-icon">☁️</div>
+                                <h4>7. Deployment and Implementation</h4>
+                            </div>
+                            <div class="seq-v-right">
+                                <ul>
+                                    <li>Prepare production environment</li>
+                                    <li>Deploy application and database</li>
+                                    <li>Configure Registrar staff accounts</li>
+                                    <li>Conduct initial setup</li>
+                                    <li>Conduct user orientation/training</li>
+                                    <li>Pilot implementation</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="seq-v-arrow">↓</div>
+
+                        <!-- 8. Documentation -->
+                        <div class="seq-v-card seq-v-magenta">
+                            <div class="seq-v-left">
+                                <div class="seq-v-icon">📑</div>
+                                <h4>8. Documentation</h4>
+                            </div>
+                            <div class="seq-v-right">
+                                <ul>
+                                    <li>Prepare technical documentation</li>
+                                    <li>Prepare administrator manual</li>
+                                    <li>Prepare user manual</li>
+                                    <li>Document testing results</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="seq-v-arrow">↓</div>
+
+                        <!-- 9. Project Closure and Evaluation -->
+                        <div class="seq-v-card seq-v-periwinkle">
+                            <div class="seq-v-left">
+                                <div class="seq-v-icon">📊</div>
+                                <h4>9. Project Closure and Evaluation</h4>
+                            </div>
+                            <div class="seq-v-right">
+                                <ul>
+                                    <li>Conduct final evaluation</li>
+                                    <li>Resolve final issues</li>
+                                    <li>Final presentation/demonstration</li>
+                                    <li>Turn over system to Registrar</li>
+                                    <li>Prepare maintenance recommendations</li>
+                                    <li>Obtain project acceptance</li>
+                                </ul>
+                            </div>
                         </div>
 
                     </div>
 
-
-                    <div class="sequence-item reveal">
-
-                        <div class="sequence-number">
-                            02
-                        </div>
-
-                        <div class="sequence-content">
-
-                            <span>WEEKS 2–3</span>
-
-                            <h3>
-                                Requirements Analysis
-                            </h3>
-
-                            <p>
-                                Identify system requirements,
-                                stakeholders, and expected functions.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="sequence-item reveal">
-
-                        <div class="sequence-number">
-                            03
-                        </div>
-
-                        <div class="sequence-content">
-
-                            <span>WEEKS 4–5</span>
-
-                            <h3>
-                                System Planning & Design
-                            </h3>
-
-                            <p>
-                                Plan the system structure, data,
-                                processes, and overall architecture.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="sequence-item reveal">
-
-                        <div class="sequence-number">
-                            04
-                        </div>
-
-                        <div class="sequence-content">
-
-                            <span>WEEK 5</span>
-
-                            <h3>
-                                UI/UX Design
-                            </h3>
-
-                            <p>
-                                Design user interfaces and interaction
-                                flows for students and Registrar staff.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="sequence-item reveal">
-
-                        <div class="sequence-number">
-                            05
-                        </div>
-
-                        <div class="sequence-content">
-
-                            <span>WEEKS 6–9</span>
-
-                            <h3>
-                                System Development
-                            </h3>
-
-                            <p>
-                                Develop the core SmartQ features
-                                and application components.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="sequence-item reveal">
-
-                        <div class="sequence-number">
-                            06
-                        </div>
-
-                        <div class="sequence-content">
-
-                            <span>WEEK 9</span>
-
-                            <h3>
-                                System Integration
-                            </h3>
-
-                            <p>
-                                Integrate system components and
-                                verify their interaction.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="sequence-item reveal">
-
-                        <div class="sequence-number">
-                            07
-                        </div>
-
-                        <div class="sequence-content">
-
-                            <span>WEEK 10</span>
-
-                            <h3>
-                                System Testing
-                            </h3>
-
-                            <p>
-                                Test system functionality and identify
-                                issues requiring correction.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="sequence-item reveal">
-
-                        <div class="sequence-number">
-                            08
-                        </div>
-
-                        <div class="sequence-content">
-
-                            <span>WEEK 11</span>
-
-                            <h3>
-                                Revision & Improvement
-                            </h3>
-
-                            <p>
-                                Apply corrections and improvements
-                                based on testing results.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="sequence-item reveal">
-
-                        <div class="sequence-number">
-                            09
-                        </div>
-
-                        <div class="sequence-content">
-
-                            <span>WEEK 12</span>
-
-                            <h3>
-                                Finalization
-                            </h3>
-
-                            <p>
-                                Complete documentation, final checks,
-                                and project presentation preparation.
-                            </p>
-
-                        </div>
-
-                    </div>
+                    <!-- End Terminal -->
+                    <div class="seq-v-arrow">↓</div>
+                    <div class="seq-v-terminal seq-v-end">End</div>
 
                 </div>
 
             </div>
 
         </section>
-
 
         <!-- =====================================================
              ACTIVITY DURATION
@@ -837,71 +782,177 @@
         </section>
 
 
-        <!-- =====================================================
-             GANTT CHART
+       <!-- =====================================================
+             GANTT CHART SECTION
         ====================================================== -->
 
-        <section class="section section-dark" id="gantt">
+        <section class="section section-dark section-gantt-full" id="gantt">
 
             <div class="container">
 
-                <div class="section-heading light reveal">
+                <div class="section-heading reveal">
 
                     <span class="section-label">
-                        06 — GANTT CHART
+                        06 — PROJECT TIMELINE
                     </span>
 
                     <h2>
-                        Twelve Weeks of
-                        <span>Project Execution</span>
+                        SmartQ Project
+                        <span>Gantt Chart</span>
                     </h2>
 
                     <p>
-                        The Gantt chart provides a visual representation
-                        of the planned project timeline.
+                        Visual schedule illustrating phase durations, overlap, and overall implementation timeline.
                     </p>
 
                 </div>
 
+            </div>
 
-                <div class="visual-card dark-card reveal">
+            <div class="visual-card visual-card-full reveal">
 
-                    <div class="visual-header">
+                <div class="gantt-board">
 
-                        <div>
-                            <span>PROJECT TIMELINE</span>
-                            <h3>SmartQ Gantt Chart</h3>
+                    <!-- Gantt Table Header / Meta -->
+                    <div class="gantt-project-header">
+                        <div class="gantt-brand">
+                            <span class="sq-logo">SQ</span>
+                            <div>
+                                <h3>SmartQ Project</h3>
+                                <p>University Registrar Queue and Document Tracking System</p>
+                            </div>
                         </div>
-
-                        <button
-                            class="view-image"
-                            type="button"
-                            data-image="assets/images/gantt-chart.png">
-
-                            View Full Image
-
-                        </button>
-
+                        <div class="gantt-tagline">
+                            GANTT CHART
+                        </div>
                     </div>
 
+                    <!-- Main Timeline Table Container -->
+                    <div class="gantt-table-container">
+                        <table class="gantt-table">
+                            <thead>
+                                <tr>
+                                    <th class="col-id">ID</th>
+                                    <th class="col-activity">Activity</th>
+                                    <th class="col-duration">Duration</th>
+                                    <th class="col-weeks" colspan="19">
+                                        <div class="weeks-title">Weeks</div>
+                                        <div class="weeks-cells">
+                                            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                                            <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                                            <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span>
+                                            <span>16</span><span>17</span><span>18</span><span>19</span>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Phase 1 -->
+                                <tr class="row-phase-1">
+                                    <td class="col-id">1</td>
+                                    <td class="col-activity">Project Planning</td>
+                                    <td class="col-duration">1 week</td>
+                                    <td class="col-grid" colspan="19">
+                                        <div class="timeline-bar bar-1" style="grid-column: 1 / span 1;"></div>
+                                    </td>
+                                </tr>
+                                <!-- Phase 2 -->
+                                <tr class="row-phase-2">
+                                    <td class="col-id">2</td>
+                                    <td class="col-activity">Requirements Analysis</td>
+                                    <td class="col-duration">2 weeks</td>
+                                    <td class="col-grid" colspan="19">
+                                        <div class="timeline-bar bar-2" style="grid-column: 2 / span 2;"></div>
+                                    </td>
+                                </tr>
+                                <!-- Phase 3 -->
+                                <tr class="row-phase-3">
+                                    <td class="col-id">3</td>
+                                    <td class="col-activity">System Design</td>
+                                    <td class="col-duration">2 weeks</td>
+                                    <td class="col-grid" colspan="19">
+                                        <div class="timeline-bar bar-3" style="grid-column: 4 / span 2;"></div>
+                                    </td>
+                                </tr>
+                                <!-- Phase 4 -->
+                                <tr class="row-phase-4">
+                                    <td class="col-id">4</td>
+                                    <td class="col-activity">System Development</td>
+                                    <td class="col-duration">6 weeks</td>
+                                    <td class="col-grid" colspan="19">
+                                        <div class="timeline-bar bar-4" style="grid-column: 6 / span 6;"></div>
+                                    </td>
+                                </tr>
+                                <!-- Phase 5 -->
+                                <tr class="row-phase-5">
+                                    <td class="col-id">5</td>
+                                    <td class="col-activity">System Integration</td>
+                                    <td class="col-duration">2 weeks</td>
+                                    <td class="col-grid" colspan="19">
+                                        <div class="timeline-bar bar-5" style="grid-column: 12 / span 2;"></div>
+                                    </td>
+                                </tr>
+                                <!-- Phase 6 -->
+                                <tr class="row-phase-6">
+                                    <td class="col-id">6</td>
+                                    <td class="col-activity">Testing and Quality Assurance</td>
+                                    <td class="col-duration">3 weeks</td>
+                                    <td class="col-grid" colspan="19">
+                                        <div class="timeline-bar bar-6" style="grid-column: 14 / span 3;"></div>
+                                    </td>
+                                </tr>
+                                <!-- Phase 7 -->
+                                <tr class="row-phase-7">
+                                    <td class="col-id">7</td>
+                                    <td class="col-activity">Deployment and Implementation</td>
+                                    <td class="col-duration">2 weeks</td>
+                                    <td class="col-grid" colspan="19">
+                                        <div class="timeline-bar bar-7" style="grid-column: 17 / span 2;"></div>
+                                    </td>
+                                </tr>
+                                <!-- Phase 8 -->
+                                <tr class="row-phase-8">
+                                    <td class="col-id">8</td>
+                                    <td class="col-activity">Documentation</td>
+                                    <td class="col-duration">3 weeks</td>
+                                    <td class="col-grid" colspan="19">
+                                        <div class="timeline-bar bar-8" style="grid-column: 13 / span 3;"></div>
+                                    </td>
+                                </tr>
+                                <!-- Phase 9 -->
+                                <tr class="row-phase-9">
+                                    <td class="col-id">9</td>
+                                    <td class="col-activity">Project Closure and Evaluation</td>
+                                    <td class="col-duration">1 week</td>
+                                    <td class="col-grid" colspan="19">
+                                        <div class="timeline-bar bar-9" style="grid-column: 19 / span 1;"></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-                    <div class="image-container">
-
-                        <img
-                            src="assets/images/gantt-chart.png"
-                            alt="SmartQ Gantt Chart">
-
-                        <div class="image-placeholder">
-
-                            <span>GANTT CHART IMAGE</span>
-
-                            <p>
-                                Place <strong>gantt-chart.png</strong>
-                                inside assets/images/
-                            </p>
-
+                    <!-- Gantt Footer / Note & Legend -->
+                    <div class="gantt-footer">
+                        <div class="gantt-note-card">
+                            <div class="note-icon">📋</div>
+                            <div class="note-text">
+                                <strong>Estimated Project Duration: 19 weeks</strong>
+                                <p>Note: Some activities (e.g., Documentation) are done in parallel with other phases to shorten the total project duration.</p>
+                            </div>
                         </div>
 
+                        <div class="gantt-legend">
+                            <div class="legend-item"><span class="dot bar-1"></span> Project Planning</div>
+                            <div class="legend-item"><span class="dot bar-2"></span> Requirements Analysis</div>
+                            <div class="legend-item"><span class="dot bar-3"></span> System Design</div>
+                            <div class="legend-item"><span class="dot bar-4"></span> System Development</div>
+                            <div class="legend-item"><span class="dot bar-5"></span> System Integration</div>
+                            <div class="legend-item"><span class="dot bar-6"></span> Testing & QA</div>
+                            <div class="legend-item"><span class="dot bar-7"></span> Deployment & Implementation</div>
+                            <div class="legend-item"><span class="dot bar-8"></span> Documentation</div>
+                            <div class="legend-item"><span class="dot bar-9"></span> Project Closure & Evaluation</div>
+                        </div>
                     </div>
 
                 </div>
@@ -909,7 +960,6 @@
             </div>
 
         </section>
-
 
         <!-- =====================================================
              BUDGET

@@ -2958,3 +2958,504 @@ a:focus-visible {
     }
 
 }
+/* =========================================================
+   WBS FULL-WIDTH (NO HORIZONTAL SCROLL)
+   ========================================================= */
+
+.section-wbs-full {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.visual-card-full {
+    width: 100%;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.wbs-container {
+    width: 100%;
+    padding: 20px 12px;
+    background: var(--navy-dark);
+    overflow: hidden; /* Prevents horizontal scrollbar completely */
+}
+
+.wbs-grid {
+    display: grid;
+    /* Force exactly 9 columns that auto-shrink to fit 100% of the screen width */
+    grid-template-columns: repeat(9, 1fr);
+    gap: 8px;
+    width: 100%;
+    min-width: 0; /* Allows grid items to shrink below content size */
+}
+
+.wbs-column {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0; /* Critical to prevent overflowing */
+}
+
+.column-title {
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--gold);
+}
+
+.column-title strong {
+    display: block;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.column-title span {
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.task {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    padding: 6px 6px;
+    font-size: 10.5px;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.25;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.task b {
+    color: var(--gold);
+    margin-right: 3px;
+    display: inline-block;
+}
+
+/* Compact text on smaller screen sizes so columns never overflow */
+@media (max-width: 1400px) {
+    .wbs-container {
+        padding: 15px 8px;
+    }
+
+    .wbs-grid {
+        gap: 5px;
+    }
+
+    .wbs-column {
+        padding: 8px 5px;
+    }
+
+    .column-title span {
+        font-size: 10px;
+    }
+
+    .task {
+        padding: 5px 4px;
+        font-size: 9.5px;
+    }
+}
+/* =========================================================
+   VERTICAL ACTIVITY SEQUENCING FLOWCHART
+   ========================================================= */
+
+.seq-vertical-board {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1e293b;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Header Banner */
+.seq-header-banner {
+    background: #0F2C59;
+    color: #ffffff;
+    width: 100%;
+    max-width: 520px;
+    padding: 14px 24px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: left;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(15, 44, 89, 0.15);
+}
+
+.seq-banner-logo {
+    width: 44px;
+    height: 44px;
+    background: #FFC107;
+    color: #0F2C59;
+    font-weight: 900;
+    font-size: 18px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.seq-header-banner h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.seq-header-banner p {
+    margin: 2px 0 0 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+}
+
+/* Terminals & Arrows */
+.seq-v-terminal {
+    padding: 6px 28px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.seq-v-start {
+    background: #cbd5e1;
+    color: #334155;
+}
+
+.seq-v-end {
+    background: #bbf7d0;
+    color: #166534;
+}
+
+.seq-v-arrow {
+    color: #0F2C59;
+    font-size: 18px;
+    font-weight: 900;
+    margin: 4px 0;
+}
+
+/* Flow Container & Cards */
+.seq-v-flow {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seq-v-card {
+    width: 100%;
+    border-radius: 12px;
+    padding: 14px 18px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 20px;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+/* Left Section: Icon + Title */
+.seq-v-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-right: 12px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.seq-v-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    flex-shrink: 0;
+}
+
+.seq-v-left h4 {
+    margin: 0;
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+}
+
+/* Right Section: Bulleted List */
+.seq-v-right ul {
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.seq-v-right li {
+    font-size: 11.5px;
+    color: #334155;
+    line-height: 1.35;
+}
+
+/* Specific Phase Colors Matching Image */
+.seq-v-blue { background-color: #dbeafe; }
+.seq-v-green { background-color: #dcfce7; }
+.seq-v-yellow { background-color: #fef9c3; }
+.seq-v-pink { background-color: #ffe4e6; }
+.seq-v-purple { background-color: #f3e8ff; }
+.seq-v-teal { background-color: #ccfbf1; }
+.seq-v-orange { background-color: #ffedd5; }
+.seq-v-magenta { background-color: #fce7f3; }
+.seq-v-periwinkle { background-color: #e0e7ff; }
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    .seq-v-card {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .seq-v-left {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-right: 0;
+        padding-bottom: 8px;
+    }
+
+}   /* =========================================================
+   SMARTQ GANTT CHART (COLOR CODED TABLE LAYOUT)
+   ========================================================= */
+
+.section-gantt-full {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.gantt-board {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: var(--radius-sm);
+    color: #1e293b;
+    overflow: hidden;
+}
+
+/* Header */
+.gantt-project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    margin-bottom: 12px;
+}
+
+.gantt-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sq-logo {
+    width: 44px;
+    height: 44px;
+    background: #0F2C59;
+    color: #FFC107;
+    font-weight: 900;
+    font-size: 18px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+}
+
+.gantt-brand h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #0F2C59;
+}
+
+.gantt-brand p {
+    margin: 2px 0 0 0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.gantt-tagline {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: #0F2C59;
+}
+
+/* Table */
+.gantt-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.gantt-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+}
+
+.gantt-table th, 
+.gantt-table td {
+    border: 1px solid #e2e8f0;
+    padding: 6px 8px;
+}
+
+.gantt-table thead th {
+    background: #0F2C59;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+}
+
+.col-id { width: 35px; text-align: center; font-weight: 700; }
+.col-activity { width: 220px; font-weight: 700; text-align: left; }
+.col-duration { width: 85px; text-align: center; }
+
+/* Weeks Grid Header */
+.weeks-title {
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 11px;
+}
+
+.weeks-cells {
+    display: grid;
+    grid-template-columns: repeat(19, 1fr);
+    text-align: center;
+    padding-top: 4px;
+    font-size: 10px;
+}
+
+/* Interactive Row Color Tinting (Matching Reference Image) */
+.row-phase-1 { background-color: #EBF3FE; }
+.row-phase-2 { background-color: #EAF7EC; }
+.row-phase-3 { background-color: #FFF9E6; }
+.row-phase-4 { background-color: #FDE8E8; }
+.row-phase-5 { background-color: #F0EBF9; }
+.row-phase-6 { background-color: #E6F7F7; }
+.row-phase-7 { background-color: #FFF2E6; }
+.row-phase-8 { background-color: #FCE8F3; }
+.row-phase-9 { background-color: #EAF4EA; }
+
+/* Timeline Bar Container in Grid */
+.col-grid {
+    padding: 4px !important;
+    display: grid;
+    grid-template-columns: repeat(19, 1fr);
+    align-items: center;
+}
+
+.timeline-bar {
+    height: 18px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Phase Specific Color Bars */
+.bar-1 { background-color: #2563EB; } /* Project Planning */
+.bar-2 { background-color: #16A34A; } /* Requirements Analysis */
+.bar-3 { background-color: #EAB308; } /* System Design */
+.bar-4 { background-color: #EF4444; } /* System Development */
+.bar-5 { background-color: #8B5CF6; } /* System Integration */
+.bar-6 { background-color: #06B6D4; } /* Testing & QA */
+.bar-7 { background-color: #F97316; } /* Deployment */
+.bar-8 { background-color: #EC4899; } /* Documentation */
+.bar-9 { background-color: #15803D; } /* Closure */
+
+/* Footer / Legend / Note */
+.gantt-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.gantt-note-card {
+    display: flex;
+    gap: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    max-width: 420px;
+}
+
+.note-icon {
+    font-size: 20px;
+}
+
+.note-text strong {
+    display: block;
+    font-size: 12px;
+    color: #0F2C59;
+}
+
+.note-text p {
+    margin: 4px 0 0 0;
+    font-size: 10.5px;
+    color: #64748b;
+    line-height: 1.35;
+}
+
+.gantt-legend {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px 16px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-item .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+/* Mobile & Tablet responsiveness */
+@media (max-width: 1024px) {
+    .gantt-footer {
+        flex-direction: column;
+    }
+    .gantt-note-card {
+        max-width: 100%;
+    }
+    .gantt-legend {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

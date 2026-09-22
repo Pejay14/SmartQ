@@ -456,3 +456,160 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+
+/* =====================================================
+       DYNAMIC WBS GENERATOR
+    ===================================================== */
+
+    const wbsGrid = document.getElementById('wbsGrid');
+
+    if (wbsGrid) {
+        const columns = [
+            ['1.0', 'Project Management|and Planning', 'blue', ['Define project|objectives and scope', 'Identify|stakeholders', 'Define project|team roles', 'Develop project|schedule', 'Identify|project risks', 'Monitor|project progress']],
+            ['2.0', 'Requirements|Analysis', 'green', ['Conduct interviews|with Registrar personnel|and users', 'Gather requirements|from students and clients', 'Analyze current|Registrar process', 'Define functional|requirements', 'Define non-functional|requirements', 'Validate and|prioritize requirements']],
+            ['3.0', 'System|Design', 'orange', ['Design system|architecture', 'Design database|(ERD)', 'Design user roles|and permissions', 'Design user|interface', 'Design queue|workflow', 'Design request/|document tracking|workflow']],
+            ['4.0', 'System|Development', 'red', ['Develop user|authentication', 'Develop student/|client module', 'Develop service|request module', 'Develop queue|reservation module', 'Develop queue|monitoring module', 'Develop notification|module', 'Develop request/|document tracking module', 'Develop Registrar/|admin module', 'Develop reports and|statistics module']],
+            ['5.0', 'System|Integration', 'indigo', ['Integrate database|and application modules', 'Integrate queue|reservation and|monitoring', 'Integrate notification|functionality', 'Integrate request|and document tracking', 'Integrate dashboard|and reporting']],
+            ['6.0', 'Testing and|Quality Assurance', 'yellow', ['Prepare test plan|and test cases', 'Conduct unit|testing', 'Conduct|integration testing', 'Conduct system|testing', 'Conduct usability|testing', 'Conduct security|and privacy testing', 'Fix defects and|retest']],
+            ['7.0', 'Deployment and|Implementation', 'mint', ['Prepare production|environment', 'Deploy application|and database', 'Configure Registrar|staff accounts', 'Conduct initial|system setup', 'Conduct user|orientation/training', 'Pilot implementation', 'Full deployment']],
+            ['8.0', 'Documentation', 'pink', ['Prepare technical|documentation', 'Prepare|administrator manual', 'Prepare|user manual', 'Document|testing results', 'Prepare final|system documentation']],
+            ['9.0', 'Project Closure|and Evaluation', 'blue', ['Conduct final|system evaluation', 'Resolve|final issues', 'Conduct final|presentation/|demonstration', 'Turn over|system to Registrar', 'Prepare|maintenance|recommendations']]
+        ];
+
+        columns.forEach(([number, title, color, tasks]) => {
+            const col = document.createElement('article');
+            col.className = `wbs-column wbs-column--${color}`;
+            col.innerHTML = `<header class="column-title"><strong>${number}</strong><span>${title.replaceAll('|', '<br>')}</span></header><div class="task-list">${tasks.map((task, i) => `<div class="task"><b>${number.split('.')[0]}.${i + 1}</b><span>${task.replaceAll('|', '<br>')}</span></div>`).join('')}</div>`;
+            wbsGrid.appendChild(col);
+        });
+    }/* =====================================================
+       DYNAMIC ACTIVITY SEQUENCING GENERATOR
+    ===================================================== */
+
+    const sequenceGrid = document.getElementById('sequenceGrid');
+
+    if (sequenceGrid) {
+        const activities = [
+            {
+                num: "1",
+                title: "Project<br>Initiation",
+                week: "Week 1",
+                color: "blue",
+                items: [
+                    "Identify problem & objectives",
+                    "Identify stakeholders",
+                    "Establish project team",
+                    "Define initial scope"
+                ]
+            },
+            {
+                num: "2",
+                title: "Requirements<br>Analysis",
+                week: "Weeks 2–3",
+                color: "green",
+                items: [
+                    "Gather user & staff requirements",
+                    "Identify services & workflows",
+                    "Define procedures"
+                ]
+            },
+            {
+                num: "3",
+                title: "System<br>Planning & Design",
+                week: "Weeks 4–5",
+                color: "yellow",
+                items: [
+                    "Develop use cases",
+                    "Database design (ERD)",
+                    "System architecture",
+                    "Process flows"
+                ]
+            },
+            {
+                num: "4",
+                title: "UI/UX<br>Design",
+                week: "Week 5",
+                color: "pink",
+                items: [
+                    "Create wireframes & prototypes",
+                    "Design student & staff interfaces"
+                ]
+            },
+            {
+                num: "5",
+                title: "System<br>Development",
+                week: "Weeks 6–9",
+                color: "purple",
+                items: [
+                    "Develop student/client module",
+                    "Develop Registrar module",
+                    "Develop admin module"
+                ]
+            },
+            {
+                num: "6",
+                title: "System<br>Integration",
+                week: "Week 9",
+                color: "teal",
+                items: [
+                    "Integrate queue reservation",
+                    "Integrate monitoring & alerts",
+                    "Integrate document tracking"
+                ]
+            },
+            {
+                num: "7",
+                title: "System<br>Testing",
+                week: "Week 10",
+                color: "orange",
+                items: [
+                    "Functional & usability testing",
+                    "Security & integration testing"
+                ]
+            },
+            {
+                num: "8",
+                title: "Revision &<br>Improvement",
+                week: "Week 11",
+                color: "rose",
+                items: [
+                    "Fix identified issues",
+                    "Improve system functionality"
+                ]
+            },
+            {
+                num: "9",
+                title: "Finalization",
+                week: "Week 12",
+                color: "periwinkle",
+                items: [
+                    "Complete documentation & manual",
+                    "Prepare presentation",
+                    "Final demonstration"
+                ]
+            }
+        ];
+
+        activities.forEach((act, idx) => {
+            const card = document.createElement('article');
+            card.className = `seq-card seq-card--${act.color}`;
+            
+            const arrowHtml = idx < activities.length - 1 ? `<div class="seq-arrow" aria-hidden="true">→</div>` : '';
+
+            card.innerHTML = `
+                <div class="seq-card-header">
+                    <span class="seq-num">${act.num}</span>
+                    <h4>${act.title}</h4>
+                </div>
+                <div class="seq-card-body">
+                    <ul>
+                        ${act.items.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                    <span class="seq-week">${act.week}</span>
+                </div>
+                ${arrowHtml}
+            `;
+
+            sequenceGrid.appendChild(card);
+        });
+    }
