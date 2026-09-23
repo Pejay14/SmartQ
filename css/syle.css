@@ -148,6 +148,59 @@ img {
 
 }
 
+/* Keep the fixed navigation readable over pages that begin on a light surface. */
+body:has(.section-light, .contact-section) .navbar {
+    background: rgba(248, 249, 250, 0.96);
+    box-shadow: 0 10px 30px rgba(10, 35, 66, 0.1);
+    backdrop-filter: blur(15px);
+}
+
+body:has(.section-light, .contact-section) .brand {
+    color: var(--navy);
+}
+
+body:has(.section-light, .contact-section) .brand-text span {
+    color: rgba(10, 35, 66, 0.62);
+}
+
+body:has(.section-light, .contact-section) .nav-link {
+    color: rgba(10, 35, 66, 0.72);
+}
+
+body:has(.section-light, .contact-section) .nav-link:hover,
+body:has(.section-light, .contact-section) .nav-link.active {
+    color: var(--navy);
+}
+
+body:has(.section-light, .contact-section) .menu-toggle {
+    background: rgba(10, 35, 66, 0.08);
+}
+
+body:has(.section-light, .contact-section) .menu-toggle span {
+    background: var(--navy);
+}
+
+body.home-page .navbar {
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+body.home-page .brand,
+body.home-page .nav-link {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+body.home-page .brand-text span {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+body.home-page .navbar.scrolled {
+    background: rgba(10, 35, 66, 0.96);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(15px);
+}
+
 .nav-container {
 
     display: flex;
@@ -205,6 +258,12 @@ img {
     box-shadow:
         0 8px 20px rgba(255, 204, 0, 0.2);
 
+}
+
+.brand-mark img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
 }
 
 .brand-text {
@@ -866,6 +925,10 @@ img {
 
     margin-bottom: 55px;
 
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+
 }
 
 .section-heading.light {
@@ -957,6 +1020,25 @@ img {
     color:
         rgba(255, 255, 255, 0.62);
 
+}
+.section-blue .section-heading .section-label {
+    color: var(--gold);
+}
+
+/* Full-width dark sections do not use the optional .light heading modifier. */
+.section-sequence-full .section-heading .section-label,
+.section-gantt-full .section-heading .section-label {
+    color: var(--gold);
+}
+
+.section-sequence-full .section-heading h2,
+.section-gantt-full .section-heading h2 {
+    color: var(--white);
+}
+
+.section-sequence-full .section-heading p,
+.section-gantt-full .section-heading p {
+    color: rgba(255, 255, 255, 0.7);
 }
 
 
@@ -1729,7 +1811,10 @@ table {
         100%;
 
     border-collapse:
-        collapse;
+        separate;
+
+    border-spacing:
+        0;
 
     min-width:
         650px;
@@ -1766,6 +1851,8 @@ th {
     text-transform:
         uppercase;
 
+    border-right: 1px solid rgba(255, 255, 255, 0.14);
+
 }
 
 td {
@@ -1781,6 +1868,8 @@ td {
 
     font-size:
         13px;
+
+    border-right: 1px solid rgba(10, 35, 66, 0.08);
 
 }
 
@@ -2041,16 +2130,6 @@ td:first-child {
 
 }
 
-.team-card.featured {
-
-    border-color:
-        rgba(255, 204, 0, 0.35);
-
-    background:
-        rgba(255, 204, 0, 0.08);
-
-}
-
 .member-avatar {
 
     width:
@@ -2161,6 +2240,37 @@ td:first-child {
     line-height:
         1.7;
 
+}
+.member-links {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+}
+.member-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    height: 34px;
+    padding: 0 10px;
+    border: 1px solid rgba(255, 204, 0, 0.35);
+    border-radius: 8px;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+.member-link:hover {
+    background: var(--gold);
+    color: var(--navy);
+    transform: translateY(-2px);
+}
+
+.team-home-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 42px;
 }
 
 
@@ -2519,8 +2629,8 @@ td:first-child {
         translateY(25px);
 
     transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
+        opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
 
 }
 
@@ -2532,6 +2642,83 @@ td:first-child {
     transform:
         translateY(0);
 
+}
+
+.overview-grid .reveal:nth-child(2),
+.goals-grid .reveal:nth-child(2),
+.team-grid .reveal:nth-child(2) {
+    transition-delay: 100ms;
+}
+
+.overview-grid .reveal:nth-child(3),
+.goals-grid .reveal:nth-child(3),
+.team-grid .reveal:nth-child(3) {
+    transition-delay: 180ms;
+}
+
+.goals-grid .reveal:nth-child(4),
+.team-grid .reveal:nth-child(4) {
+    transition-delay: 260ms;
+}
+
+.team-grid .reveal:nth-child(5) {
+    transition-delay: 340ms;
+}
+
+@keyframes smartq-rise-in {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-loaded .wbs-column,
+.page-loaded .seq-v-card {
+    animation: smartq-rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.page-loaded .wbs-column:nth-child(2),
+.page-loaded .seq-v-card:nth-child(2) {
+    animation-delay: 80ms;
+}
+
+.page-loaded .wbs-column:nth-child(3),
+.page-loaded .seq-v-card:nth-child(3) {
+    animation-delay: 160ms;
+}
+
+.page-loaded .wbs-column:nth-child(4),
+.page-loaded .seq-v-card:nth-child(4) {
+    animation-delay: 240ms;
+}
+
+.page-loaded .wbs-column:nth-child(5),
+.page-loaded .seq-v-card:nth-child(5) {
+    animation-delay: 320ms;
+}
+
+.page-loaded .wbs-column:nth-child(6),
+.page-loaded .seq-v-card:nth-child(6) {
+    animation-delay: 400ms;
+}
+
+.page-loaded .wbs-column:nth-child(7),
+.page-loaded .seq-v-card:nth-child(7) {
+    animation-delay: 480ms;
+}
+
+.page-loaded .wbs-column:nth-child(8),
+.page-loaded .seq-v-card:nth-child(8) {
+    animation-delay: 560ms;
+}
+
+.page-loaded .wbs-column:nth-child(9),
+.page-loaded .seq-v-card:nth-child(9) {
+    animation-delay: 640ms;
 }
 
 
@@ -2628,6 +2815,12 @@ body.page-loaded .hero-content {
         right:
             14px;
 
+        max-height:
+            calc(100vh - 90px);
+
+        overflow-y:
+            auto;
+
         display:
             flex;
 
@@ -2684,6 +2877,15 @@ body.page-loaded .hero-content {
 
     }
 
+    body:has(.section-light, .contact-section) .nav-menu .nav-link {
+        color: rgba(255, 255, 255, 0.72);
+    }
+
+    body:has(.section-light, .contact-section) .nav-menu .nav-link:hover,
+    body:has(.section-light, .contact-section) .nav-menu .nav-link.active {
+        color: var(--white);
+    }
+
     .nav-link {
 
         padding:
@@ -2695,6 +2897,14 @@ body.page-loaded .hero-content {
         font-size:
             13px;
 
+    }
+
+    .overview-card:hover,
+    .goal-card:hover,
+    .team-card:hover,
+    .wbs-column:hover,
+    .seq-v-card:hover {
+        transform: translateY(-4px);
     }
 
     .nav-link:hover,
@@ -3018,6 +3228,14 @@ a:focus-visible {
     flex-direction: column;
     gap: 8px;
     min-width: 0; /* Critical to prevent overflowing */
+
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.wbs-column:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 204, 0, 0.65);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
 }
 
 .wbs-column--blue {
@@ -3231,6 +3449,14 @@ a:focus-visible {
     gap: 20px;
     align-items: center;
     box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    transition: transform var(--transition), box-shadow var(--transition);
+    border: 1px solid rgba(15, 44, 89, 0.14);
+    border-left: 5px solid #64748b;
+}
+
+.seq-v-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(15, 44, 89, 0.14);
 }
 
 /* Left Section: Icon + Title */
@@ -3278,15 +3504,15 @@ a:focus-visible {
 }
 
 /* Specific Phase Colors Matching Image */
-.seq-v-blue { background-color: #dbeafe; }
-.seq-v-green { background-color: #dcfce7; }
-.seq-v-yellow { background-color: #fef9c3; }
-.seq-v-pink { background-color: #ffe4e6; }
-.seq-v-purple { background-color: #f3e8ff; }
-.seq-v-teal { background-color: #ccfbf1; }
-.seq-v-orange { background-color: #ffedd5; }
-.seq-v-magenta { background-color: #fce7f3; }
-.seq-v-periwinkle { background-color: #e0e7ff; }
+.seq-v-blue { background-color: #f2f6fc; border-left-color: #3b82f6; }
+.seq-v-green { background-color: #f2f8f3; border-left-color: #22c55e; }
+.seq-v-yellow { background-color: #fcfaf0; border-left-color: #d4a514; }
+.seq-v-pink { background-color: #fcf3f4; border-left-color: #e05272; }
+.seq-v-purple { background-color: #f7f3fb; border-left-color: #8b5cf6; }
+.seq-v-teal { background-color: #eff9f7; border-left-color: #0d9488; }
+.seq-v-orange { background-color: #fcf6ef; border-left-color: #ea580c; }
+.seq-v-magenta { background-color: #fbf2f7; border-left-color: #db2777; }
+.seq-v-periwinkle { background-color: #f2f4fc; border-left-color: #6366f1; }
 
 /* Responsive Adjustments */
 @media (max-width: 640px) {
@@ -3373,14 +3599,21 @@ a:focus-visible {
 
 .gantt-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     font-size: 11.5px;
 }
 
 .gantt-table th, 
 .gantt-table td {
-    border: 1px solid #e2e8f0;
+    border-right: 1px solid #d5deea;
+    border-bottom: 1px solid #d5deea;
     padding: 6px 8px;
+}
+
+.gantt-table th:first-child,
+.gantt-table td:first-child {
+    border-left: 1px solid #d5deea;
 }
 
 .gantt-table thead th {
@@ -3409,6 +3642,14 @@ a:focus-visible {
     font-size: 10px;
 }
 
+.weeks-cells span {
+    border-right: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.weeks-cells span:last-child {
+    border-right: 0;
+}
+
 /* Interactive Row Color Tinting (Matching Reference Image) */
 .row-phase-1 { background-color: #EBF3FE; }
 .row-phase-2 { background-color: #EAF7EC; }
@@ -3426,6 +3667,8 @@ a:focus-visible {
     display: grid;
     grid-template-columns: repeat(19, 1fr);
     align-items: center;
+    background-image: linear-gradient(to right, rgba(100, 116, 139, 0.2) 1px, transparent 1px);
+    background-size: calc(100% / 19) 100%;
 }
 
 .timeline-bar {
@@ -3448,9 +3691,8 @@ a:focus-visible {
 /* Footer / Legend / Note */
 .gantt-footer {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
+    flex-direction: column;
+    gap: 14px;
     margin-top: 20px;
     padding-top: 15px;
     border-top: 1px solid #f1f5f9;
@@ -3458,12 +3700,14 @@ a:focus-visible {
 
 .gantt-note-card {
     display: flex;
+    order: 2;
+    width: 100%;
     gap: 12px;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    background: rgba(15, 44, 89, 0.06);
+    border: 1px solid rgba(15, 44, 89, 0.12);
+    border-radius: 12px;
     padding: 12px 16px;
-    max-width: 420px;
+    max-width: none;
 }
 
 .note-icon {
@@ -3484,12 +3728,19 @@ a:focus-visible {
 }
 
 .gantt-legend {
+    order: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px 16px;
     font-size: 11px;
     font-weight: 600;
     color: #334155;
+    padding: 14px;
+    border: 1px solid rgba(15, 44, 89, 0.14);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.58);
+    box-shadow: 0 12px 28px rgba(15, 44, 89, 0.08);
+    backdrop-filter: blur(12px);
 }
 
 .legend-item {
@@ -3517,4 +3768,8 @@ a:focus-visible {
     .gantt-legend {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(10, 35, 66, 0.025);
 }

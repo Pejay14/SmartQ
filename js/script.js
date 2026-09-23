@@ -154,10 +154,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         navItems.forEach((link) => {
 
-            link.classList.remove("active");
-
             const target =
                 link.getAttribute("href");
+
+            if (!target || !target.startsWith("#")) {
+                return;
+            }
+
+            link.classList.remove("active");
 
             if (
                 target ===

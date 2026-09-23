@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="../css/syle.css">
 </head>
 
-<body>
+<body class="home-page">
     <header class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="home.html" class="brand">
-                <div class="brand-mark">SQ</div>
+                <div class="brand-mark"><img src="../images/Logo.png" alt="SmartQ logo"></div>
                 <div class="brand-text">
                     <strong>SmartQ</strong>
                     <span>JRMSU Registrar</span>
@@ -30,15 +30,14 @@
             </button>
 
             <nav class="nav-menu" id="navMenu">
-                <a href="home.html" class="nav-link active">Home</a>
-                <a href="overview.html" class="nav-link">Overview</a>
-                <a href="goals.html" class="nav-link">Goals</a>
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#overview" class="nav-link">Overview</a>
+                <a href="#goals" class="nav-link">Goals</a>
                 <a href="wbs.html" class="nav-link">WBS</a>
-                <a href="sequence.html" class="nav-link">Sequence</a>
-                <a href="duration.html" class="nav-link">Schedule</a>
-                <a href="gantt.html" class="nav-link">Gantt</a>
+                <a href="sequence.html" class="nav-link">AS</a>
+                <a href="duration.html" class="nav-link">ADE</a>
+                <a href="gantt.html" class="nav-link">GC</a>
                 <a href="team.html" class="nav-link">Team</a>
-                <a href="contact.html" class="nav-link">Contact</a>
             </nav>
         </div>
     </header>
@@ -61,7 +60,7 @@
                 </p>
 
                 <div class="hero-buttons reveal">
-                    <a href="overview.html" class="btn btn-primary">Explore Project <span>→</span></a>
+                    <a href="#overview" class="btn btn-primary">Explore Project <span>→</span></a>
                     <a href="duration.html" class="btn btn-glass">View Schedule</a>
                 </div>
 
@@ -75,18 +74,65 @@
                         <strong>9</strong>
                         <span>Major Activities</span>
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="hero-stat">
-                        <strong>₱2,800</strong>
-                        <span>Estimated Budget</span>
-                    </div>
                 </div>
             </div>
 
-            <a href="overview.html" class="scroll-indicator">
+            <a href="#overview" class="scroll-indicator">
                 <span>Scroll to explore</span>
                 <div class="scroll-line"></div>
             </a>
+        </section>
+
+        <section class="section section-light" id="overview">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-label">01 — PROJECT OVERVIEW</span>
+                    <h2>Making Registrar Services <span>More Organized</span></h2>
+                    <p>SmartQ is a proposed web-based Queue Reservation and Document Tracking System
+                    designed for the University Registrar's Office of Jose Rizal Memorial State University (JRMSU).
+                    The system provides students, applicants, alumni, and authorized representatives with a more
+                    organized way to access Registrar services by allowing them to select the service they need,
+                    reserve an available queue schedule, and monitor their position while waiting for their turn.
+                    Instead of requiring users to remain in a physical queue without knowing how long they may have
+                    to wait, SmartQ provides queue information and an estimated waiting time so users can better
+                    manage their time. The system also includes document tracking, allowing users to check the
+                    progress of their physical document requests from the time the request is received until it
+                    is processed and ready for release. Users are not required to upload their physical document
+                    requirements through the system; the required documents are still submitted directly to the
+                    Registrar's Office. On the administrative side, authorized Registrar personnel can use a
+                    centralized dashboard to manage queue schedules, monitor students and service requests,
+                    update document statuses, and view relevant records and reports. SmartQ may also provide
+                    notifications to help users stay informed, such as reminders 30 minutes before their scheduled
+                    queue time or alerts when only five people remain ahead of them. Overall, the system is
+                    intended to improve the organization, visibility, and coordination of Registrar services by
+                    connecting queue management and document tracking within a single digital platform.</p>
+                </div>
+
+                <div class="overview-grid">
+                    <div class="overview-card reveal"><div class="card-number">01</div><div class="card-icon">◷</div><h3>Queue Reservation</h3><p>Students can select a Registrar service, reserve a queue slot, and monitor their queue position.</p></div>
+                    <div class="overview-card reveal"><div class="card-number">02</div><div class="card-icon">◫</div><h3>Document Tracking</h3><p>Users can monitor the status of requested physical documents from submission until completion.</p></div>
+                    <div class="overview-card reveal"><div class="card-number">03</div><div class="card-icon">◉</div><h3>Registrar Dashboard</h3><p>Authorized Registrar personnel can manage queues, document requests, statuses, and reports.</p></div>
+                </div>
+
+                <div class="overview-highlight reveal"><div class="highlight-icon">!</div><div><strong>Project Focus</strong><p>The system focuses on improving the organization and visibility of Registrar services without requiring students to upload their physical document requirements.</p></div></div>
+            </div>
+        </section>
+
+        <section class="section section-dark" id="goals">
+            <div class="container">
+                <div class="section-heading light reveal">
+                    <span class="section-label">02 — PROJECT GOALS</span>
+                    <h2>What SmartQ <span>Aims to Achieve</span></h2>
+                    <p>The project is structured around practical improvements to Registrar service management.</p>
+                </div>
+
+                <div class="goals-grid">
+                    <div class="goal-card reveal"><span class="goal-number">01</span><h3>Reduce Unnecessary Waiting</h3><p>Provide students with scheduled queue slots and queue position information.</p></div>
+                    <div class="goal-card reveal"><span class="goal-number">02</span><h3>Improve Service Visibility</h3><p>Allow students to monitor their queue and document request status.</p></div>
+                    <div class="goal-card reveal"><span class="goal-number">03</span><h3>Organize Registrar Operations</h3><p>Provide Registrar personnel with a centralized management dashboard.</p></div>
+                    <div class="goal-card reveal"><span class="goal-number">04</span><h3>Support Better Planning</h3><p>Generate useful queue and document management information for the office.</p></div>
+                </div>
+            </div>
         </section>
     </main>
 
