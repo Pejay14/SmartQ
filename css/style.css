@@ -191,6 +191,12 @@ body.home-page .nav-link {
     color: rgba(255, 255, 255, 0.82);
 }
 
+body.home-page .navbar:not(.scrolled) .nav-link,
+body.home-page .navbar:not(.scrolled) .nav-link:hover,
+body.home-page .navbar:not(.scrolled) .nav-link.active {
+    color: var(--white);
+}
+
 body.home-page .brand-text span {
     color: rgba(255, 255, 255, 0.65);
 }
@@ -248,39 +254,32 @@ body.home-page .navbar.scrolled .brand-text span {
 }
 
 .brand-mark {
-
-    width: 44px;
-    height: 44px;
-
-    display: grid;
-
-    place-items: center;
-
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
     border-radius: 12px;
-
-    background:
-        var(--gold);
-
-    color:
-        var(--navy);
-
-    font-family:
-        "Plus Jakarta Sans",
-        sans-serif;
-
+    background: var(--white);
+    color: var(--navy);
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 14px;
-
     font-weight: 800;
-
-    box-shadow:
-        0 8px 20px rgba(255, 204, 0, 0.2);
-
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
 .brand-mark img {
-    width: 70%;
-    height: 70%;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
+    display: block;
 }
 
 .brand-text {
@@ -600,6 +599,13 @@ body.home-page .navbar.scrolled .brand-text span {
 }
 
 .hero-title span {
+
+    color:
+        var(--white);
+
+}
+
+.hero-title span.hero-title-initial {
 
     color:
         var(--gold);
@@ -2287,6 +2293,217 @@ td:first-child {
     margin-top: 42px;
 }
 
+.team-detail-section {
+    margin-top: 72px;
+    padding-top: 56px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    scroll-margin-top: 100px;
+}
+
+.team-detail-heading {
+    max-width: 720px;
+    margin-bottom: 24px;
+}
+
+.team-detail-heading h2 {
+    margin-top: 10px;
+    color: var(--white);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: clamp(24px, 3vw, 34px);
+    line-height: 1.2;
+}
+
+.team-detail-heading h2 span {
+    color: var(--gold);
+}
+
+.team-detail-heading p,
+.team-assessment-note {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 13px;
+}
+
+.team-assessment-note {
+    margin: 0 0 16px;
+    padding: 12px 16px;
+    border-left: 3px solid var(--gold);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.team-table-scroll {
+    overflow-x: auto;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.team-data-table {
+    min-width: 850px;
+}
+
+.team-data-table td {
+    vertical-align: top;
+}
+
+.team-org-chart {
+    position: relative;
+    padding-top: 8px;
+}
+
+.team-org-lead {
+    position: relative;
+    width: min(100%, 420px);
+    margin: 0 auto 54px;
+    padding: 22px 26px;
+    border: 1px solid rgba(255, 204, 0, 0.52);
+    border-radius: var(--radius);
+    background: rgba(255, 204, 0, 0.12);
+    text-align: center;
+}
+
+.team-org-lead::after {
+    position: absolute;
+    bottom: -27px;
+    left: 50%;
+    width: 2px;
+    height: 26px;
+    background: rgba(255, 204, 0, 0.55);
+    content: "";
+}
+
+.team-org-role {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+}
+
+.team-org-photo {
+    display: block;
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 14px;
+    border: 3px solid rgba(255, 204, 0, 0.72);
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.team-org-lead .team-org-photo {
+    width: 88px;
+    height: 88px;
+}
+
+.team-org-lead strong,
+.team-org-card strong {
+    display: block;
+    color: var(--white);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 16px;
+}
+
+.team-org-lead > span:last-child {
+    display: block;
+    margin-top: 7px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 12px;
+}
+
+.team-org-members {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.team-org-members::before {
+    position: absolute;
+    top: -28px;
+    right: calc(12.5% - 5.25px);
+    left: calc(12.5% - 5.25px);
+    height: 2px;
+    background: rgba(255, 204, 0, 0.55);
+    content: "";
+}
+
+.team-org-card {
+    position: relative;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.06);
+    text-align: center;
+}
+
+.team-org-card::before {
+    position: absolute;
+    top: -29px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background: rgba(255, 204, 0, 0.55);
+    content: "";
+    transform: translateX(-50%);
+}
+
+.team-org-card::after {
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    border-top: 9px solid rgba(255, 204, 0, 0.75);
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    content: "";
+    transform: translateX(-50%);
+}
+
+.team-org-card p {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.team-responsibility-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 34px;
+}
+
+.team-responsibility-card {
+    padding: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.team-responsibility-card h3 {
+    margin-bottom: 12px;
+    color: var(--white);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 16px;
+}
+
+.team-responsibility-card p {
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.team-schedule-title {
+    margin: 0 0 16px;
+    color: var(--white);
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 19px;
+}
+
 
 /* =========================================================
    CONTACT
@@ -2785,6 +3002,21 @@ body.page-loaded .hero-content {
 
     }
 
+    .team-org-members {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 40px;
+    }
+
+    .team-org-members::before {
+        display: none;
+    }
+
+    .team-org-lead::after,
+    .team-org-card::before,
+    .team-org-card::after {
+        display: none;
+    }
+
 }
 
 
@@ -3002,11 +3234,32 @@ body.page-loaded .hero-content {
     .overview-grid,
     .goals-grid,
     .team-grid,
+    .team-responsibility-grid,
     .budget-layout {
 
         grid-template-columns:
             1fr;
 
+    }
+
+    .team-detail-section {
+        margin-top: 54px;
+        padding-top: 40px;
+    }
+
+    .team-org-lead {
+        margin-bottom: 28px;
+    }
+
+    .team-org-lead::after,
+    .team-org-card::before,
+    .team-org-card::after {
+        display: none;
+    }
+
+    .team-org-members {
+        grid-template-columns: 1fr;
+        gap: 12px;
     }
 
     .section-heading {
