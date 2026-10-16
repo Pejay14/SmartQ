@@ -159,7 +159,7 @@ body:has(.section-light, .contact-section) .brand {
     color: var(--navy);
 }
 
-body:has(.section-light, .contact-section) .brand-text span {
+body:has(.section-light, .contact-section) .brand-text > span {
     color: rgba(10, 35, 66, 0.62);
 }
 
@@ -197,7 +197,7 @@ body.home-page .navbar:not(.scrolled) .nav-link.active {
     color: var(--white);
 }
 
-body.home-page .brand-text span {
+body.home-page .brand-text > span {
     color: rgba(255, 255, 255, 0.65);
 }
 
@@ -220,7 +220,7 @@ body.home-page .navbar.scrolled .nav-link {
     color: rgba(255, 255, 255, 0.92);
 }
 
-body.home-page .navbar.scrolled .brand-text span {
+body.home-page .navbar.scrolled .brand-text > span {
     color: rgba(255, 255, 255, 0.65);
 }
 
@@ -304,7 +304,7 @@ body.home-page .navbar.scrolled .brand-text span {
 
 }
 
-.brand-text span {
+.brand-text > span {
 
     margin-top: 3px;
 
@@ -317,6 +317,10 @@ body.home-page .navbar.scrolled .brand-text span {
 
     letter-spacing: 0.12em;
 
+}
+
+.brand-gold {
+    color: var(--gold) !important;
 }
 
 
@@ -3365,7 +3369,7 @@ body.page-loaded .hero-content {
 
 @media (max-width: 450px) {
 
-    .brand-text span {
+    .brand-text > span {
 
         display:
             none;
