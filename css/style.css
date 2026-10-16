@@ -1041,7 +1041,8 @@ body.home-page .navbar.scrolled .brand-text span {
         rgba(255, 255, 255, 0.62);
 
 }
-.section-blue .section-heading .section-label {
+.section-blue .section-heading .section-label,
+.section-blue .section-label {
     color: var(--gold);
 }
 
@@ -1051,11 +1052,19 @@ body.home-page .navbar.scrolled .brand-text span {
     color: var(--gold);
 }
 
+.section-blue .section-heading h2,
 .section-sequence-full .section-heading h2,
 .section-gantt-full .section-heading h2 {
     color: var(--white);
 }
 
+.section-blue .section-heading h2 span:first-child:not(:last-child),
+.section-sequence-full .section-heading h2 span:first-child:not(:last-child),
+.section-heading.light h2 span:first-child:not(:last-child) {
+    color: var(--white);
+}
+
+.section-blue .section-heading p,
 .section-sequence-full .section-heading p,
 .section-gantt-full .section-heading p {
     color: rgba(255, 255, 255, 0.7);
@@ -2286,6 +2295,12 @@ td:first-child {
     color: var(--navy);
     transform: translateY(-2px);
 }
+.member-link svg {
+    width: 14px;
+    height: 14px;
+    display: block;
+    flex-shrink: 0;
+}
 
 .team-home-action {
     display: flex;
@@ -2303,6 +2318,10 @@ td:first-child {
 .team-detail-heading {
     max-width: 720px;
     margin-bottom: 24px;
+}
+
+.team-detail-heading .section-label {
+    color: var(--gold);
 }
 
 .team-detail-heading h2 {
