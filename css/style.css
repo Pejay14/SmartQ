@@ -195,10 +195,27 @@ body.home-page .brand-text span {
     color: rgba(255, 255, 255, 0.65);
 }
 
+body.home-page .menu-toggle {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+body.home-page .menu-toggle span {
+    background: var(--white);
+}
+
 body.home-page .navbar.scrolled {
     background: rgba(10, 35, 66, 0.96);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(15px);
+}
+
+body.home-page .navbar.scrolled .brand,
+body.home-page .navbar.scrolled .nav-link {
+    color: rgba(255, 255, 255, 0.92);
+}
+
+body.home-page .navbar.scrolled .brand-text span {
+    color: rgba(255, 255, 255, 0.65);
 }
 
 .nav-container {
@@ -443,9 +460,6 @@ body.home-page .navbar.scrolled {
 
     background:
         var(--navy);
-
-    background-image:
-        url("../assets/images/registrar-bg.jpg");
 
     background-size: cover;
 
